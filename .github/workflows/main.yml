@@ -13,12 +13,8 @@ concurrency:
 on:
   push:
     branches: [ develop, staging , main ]
-    paths:
-      - '*'
   pull_request:
     branches: [ develop, staging , main ]
-    paths:
-      - '*'
   workflow_dispatch:
 
 jobs:
