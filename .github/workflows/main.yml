@@ -37,7 +37,7 @@ jobs:
         with:
           dotnet-version: '6.0.x'
       - name: Build and analyze
-        working-directory: ./${{ env.module }}
+        working-directory: ./
         run: |
           dotnet tool install --global dotnet-sonarscanner
           dotnet-sonarscanner begin /k:"${{ env.sonarProjectKey }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.pullrequest.key=${{ github.event.number }} /d:sonar.pullrequest.branch="${{github.head_ref}}" /d:sonar.pullrequest.base="${{github.base_ref}}" /d:sonar.pullrequest.provider=github /d:sonar.cs.vscoveragexml.reportsPaths="coverage.xml"
