@@ -4,6 +4,7 @@ name: CICD Workflow Template
 # Define environmental variables
 env: 
   module: testflow
+  sonarProjectKey: khanhct_testflow_AYh2MGffFF6yfahJTmPT
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
