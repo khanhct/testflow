@@ -3,7 +3,7 @@ name: CICD Workflow Template
 
 # Define environmental variables
 env: 
-  module: Template Module
+  module: testflow
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
