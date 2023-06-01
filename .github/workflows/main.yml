@@ -21,13 +21,15 @@ jobs:
   # Checking code quality
   code_quality:
     name: Code Quality
-    if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.TOKEN }}
           submodules: recursive
+      - run: echo "event name is:" ${{ github.event_name }} 
+      - run: echo "event type is:" ${{ github.event.action }} 
       - name: Update submodules
         id: update
         run: |
