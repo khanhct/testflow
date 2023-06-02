@@ -82,4 +82,4 @@ jobs:
         run: |
           curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.2.5/argocd-linux-amd64 && chmod +x /usr/local/bin/argocd
           argocd login ${{ env.argocd_url_dev }} --username ${{ env.argocd_user }} --password ${{ secrets.DEV_ARGOCD_SECRET }} --insecure
-          argocd app set app-demo -p replicaCount=2
+          argocd app set app-demo -p replicaCount=1
