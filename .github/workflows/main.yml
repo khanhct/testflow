@@ -86,7 +86,7 @@ jobs:
       - name: Login to Private registry
         uses: docker/login-action@v2
         with:
-          registry: {{}}
+          registry: ${{ env.registry_url }}
           username: ${{ env.REG_USER }}
           password: ${{ secrets.REG_PASSWORD }}
       - name: Build, tag, and push image to
