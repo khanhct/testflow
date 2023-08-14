@@ -8,7 +8,7 @@ var fs = require('fs'),
 app.listen(port, () => {
     console.log('listening for request on port 8080123');
 });
-app.get('/', (req, res) => {
+app.get('/info', (req, res) => {
     //console.log('request made');
     //res.sendFile("./documents/index.html", { root: __dirname })
     fs.readFile(filePath, { encoding: 'utf-8' }, function (err, data) {
